@@ -1,7 +1,8 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
+    <img alt="Vue logo" src="../assets/img/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <router-link :to="{ name: 'logout' }">Logout</router-link>
   </div>
 </template>
 
@@ -16,3 +17,9 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+  .home {
+    text-align: center;
+  }
+</style>
