@@ -1,6 +1,6 @@
-import Home from '@/views/Home.vue'
-import Login from '@/views/auth/Login.vue'
-import Logout from '@/views/auth/Logout.vue'
+import Home from '@/pages/Home.vue'
+import Login from '@/pages/auth/Login.vue'
+import Logout from '@/pages/auth/Logout.vue'
 
 export const routes = [
   {
@@ -18,7 +18,7 @@ export const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '@/views/About.vue')
+    component: () => import(/* webpackChunkName: "about" */ '@/pages/About.vue')
   },
   {
     path: '/login',

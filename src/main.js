@@ -1,10 +1,11 @@
 import Vue from 'vue'
 import App from './App.vue'
-import router from './vue-commons/router'
-import store from './vue-commons/store'
+import router from './plugins/router'
+import store from './plugins/store'
 
-import './vue-commons/mixins'
-import './vue-commons/filters'
+import './plugins/mixins'
+import './plugins/filters'
+import './plugins/vue-plugins'
 
 import './assets/scss/main.scss'
 

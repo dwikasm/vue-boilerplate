@@ -1,8 +1,13 @@
-import axios from 'axios'
-import { links } from '../config'
+import Http from './http.class'
+import { endpoints } from '../config'
+
+// create http instance with custom config
+let myHttp = new Http({
+  headers: {'Content-Type': 'application/json'}
+})
 
 export function doSearch() {
-  return new Promise((resolve, reject) {
+  return new Promise((resolve, reject) => {
     if (true) {
       resolve();
     }
@@ -13,8 +18,8 @@ export function doSearch() {
 }
 
 export function doSearchApi() {
-  return new Promise((resolve, reject) {
-    axios.get(links.SEARCH)
+  return new Promise((resolve, reject) => {
+    myHttp.get(endpoints.SEARCH)
       .then((response) => {
         resolve(response);
       })

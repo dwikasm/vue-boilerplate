@@ -1,0 +1,18 @@
+html,
+body {
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: $color-background;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  @include media_non_small {
+    font-size: $base-font-size + 2px;
+  }
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}

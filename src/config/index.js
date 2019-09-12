@@ -1,5 +1,5 @@
-import links from './links';
+import endpoints from './endpoints';
 
 export {
-  links
+  endpoints
 }
