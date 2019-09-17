@@ -1,6 +1,6 @@
-import Home from '@/pages/Home.vue'
-import Login from '@/pages/auth/Login.vue'
-import Logout from '@/pages/auth/Logout.vue'
+import Home from '@/pages/Home.vue';
+import Login from '@/pages/auth/Login.vue';
+import Logout from '@/pages/auth/Logout.vue';
 
 export const routes = [
   {
@@ -9,8 +9,8 @@ export const routes = [
     component: Home,
     meta: {
       title: 'Home',
-      requiresAuth: true
-    }
+      requiresAuth: true,
+    },
   },
   {
     path: '/about',
@@ -18,7 +18,7 @@ export const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '@/pages/About.vue')
+    component: () => import(/* webpackChunkName: "about" */ '@/pages/About.vue'),
   },
   {
     path: '/login',
@@ -26,8 +26,8 @@ export const routes = [
     component: Login,
     meta: {
       title: 'Login Page',
-      guest: true
-    }
+      guest: true,
+    },
   },
   {
     path: '/logout',
@@ -35,7 +35,7 @@ export const routes = [
     component: Logout,
     meta: {
       title: 'Logout Page',
-      requiresAuth: true
-    }
-  }
-]
+      requiresAuth: true,
+    },
+  },
+];

@@ -10,6 +10,6 @@ export default {
   created() {
     localStorage.removeItem('access_token');
     this.$router.push({ name: 'login' });
-  }
-}
+  },
+};
 </script>

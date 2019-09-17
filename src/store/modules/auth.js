@@ -1,8 +1,8 @@
-import axios from 'axios'
+import axios from 'axios';
 
 export default {
   state: {
-    token: localStorage.getItem('access_token') || null
+    token: localStorage.getItem('access_token') || null,
   },
   mutations: {
     retrieve_token(state, token) {
@@ -10,26 +10,25 @@ export default {
     },
     destroy_token(state) {
       state.token = null;
-    }
+    },
   },
   getters: {
     loggedIn(state) {
       return state.token != null;
-    }
+    },
   },
   actions: {
     retrieveToken(context, credentials) {
       return new Promise((resolve, reject) => {
-        if (credentials.username == 'admin' && credentials.password == 'awesome') {
-          let token = 'this-is-token';
+        if (credentials.username === 'admin' && credentials.password === 'awesome') {
+          const token = 'this-is-token';
           localStorage.setItem('access_token', token);
           context.commit('retrieve_token', token);
           resolve('Right');
         } else {
-          reject('Wrong');
+          reject(new Error('Wrong'));
         }
-
-      }) // nanti loginnya pake yang bawah
+      }); // nanti loginnya pake yang bawah
       // return new Promise((resolve, reject) => {
       //   axios.post('/login', {
       //     username: credentials.username,
@@ -52,18 +51,19 @@ export default {
       if (context.getters.loggedIn) {
         return new Promise((resolve, reject) => {
           axios.post('/logout')
-            .then(response => {
+            .then((response) => {
               localStorage.removeItem('access_token');
               context.commit('destroy_token');
               resolve(response);
             })
-            .catch(error => {
+            .catch((error) => {
               localStorage.removeItem('access_token');
               context.commit('destroy_token');
               reject(error);
-            })
-        })
+            });
+        });
       }
+      return false;
     },
-  }
-}
+  },
+};

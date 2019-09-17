@@ -1,10 +1,10 @@
-import auth from './auth'
-import booking from './booking'
+import auth from './auth';
+import booking from './booking';
 
 export default {
   auth,
-  booking
-}
+  booking,
+};
 
 /*
   mutation pake snake_case

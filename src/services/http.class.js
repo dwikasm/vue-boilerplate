@@ -1,13 +1,13 @@
-import axios from 'axios'
+import axios from 'axios';
 
 export default class Http {
-  constructor (config = {}) {
+  constructor(config = {}) {
     this.instance = axios.create({
       // defaults
       timeout: 10000,
       // merge custom config
-      ...config
-    })
+      ...config,
+    });
 
     return this.instance;
   }

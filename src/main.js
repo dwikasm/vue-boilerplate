@@ -1,18 +1,20 @@
-import Vue from 'vue'
-import App from './App.vue'
-import router from './plugins/router'
-import store from './plugins/store'
+import Vue from 'vue';
+import App from './App.vue';
 
-import './plugins/mixins'
-import './plugins/filters'
-import './plugins/vue-plugins'
+import router from './router';
+import store from './store';
 
-import './assets/scss/main.scss'
+import './plugins/mixins';
+import './plugins/filters';
+// import './plugins/directives';
+import './plugins/misc';
 
-Vue.config.productionTip = false
+import './assets/scss/main.scss';
+
+Vue.config.productionTip = false;
 
 new Vue({
   router,
   store,
-  render: h => h(App)
-}).$mount('#app')
+  render: h => h(App),
+}).$mount('#app');

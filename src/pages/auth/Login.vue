@@ -43,12 +43,12 @@ export default {
       username: null,
       password: null,
       isError: false,
-      environment: process.env.NODE_ENV
-    }
+      environment: process.env.NODE_ENV,
+    };
   },
   methods: {
     login() {
-      if (this.username == 'admin' && this.password == 'admin123') {
+      if (this.username === 'admin' && this.password === 'admin123') {
         localStorage.setItem('access_token', 'token');
         this.$router.push({ name: 'home' });
       } else {
@@ -65,7 +65,7 @@ export default {
       //   .catch(() => {
       //     this.isError = true;
       //   })
-    }
-  }
-}
+    },
+  },
+};
 </script>

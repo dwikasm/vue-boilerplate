@@ -1,20 +1,19 @@
-import Http from './http.class'
-import { endpoints } from '../config'
+import Http from './http.class';
+import { endpoints } from '../config';
 
 // create http instance with custom config
-let myHttp = new Http({
-  headers: {'Content-Type': 'application/json'}
-})
+const myHttp = new Http({
+  headers: { 'Content-Type': 'application/json' },
+});
 
 export function doSearch() {
   return new Promise((resolve, reject) => {
     if (true) {
       resolve();
-    }
-    else {
+    } else {
       reject();
     }
-  })
+  });
 }
 
 export function doSearchApi() {
@@ -25,6 +24,6 @@ export function doSearchApi() {
       })
       .catch((error) => {
         reject(error);
-      })
-  })
+      });
+  });
 }

@@ -1,13 +1,13 @@
 export default {
   namespaced: true,
   state: {
-    savedFilter: null
+    savedFilter: null,
   },
   mutations: {
     save_filter(state, filter) {
       // handle date bug from json stringfy
-      let fromDate = filter.fromDate;
-      let toDate = filter.toDate;
+      const { fromDate } = filter;
+      const { toDate } = filter;
 
       state.savedFilter = JSON.parse(JSON.stringify(filter));
 
@@ -16,9 +16,9 @@ export default {
     },
     clear_filter(state) {
       state.savedFilter = null;
-    }
-  }
-}
+    },
+  },
+};
 
 
 /*
